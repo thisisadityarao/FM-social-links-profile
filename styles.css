@@ -1,4 +1,30 @@
-/****** RESET START ******/
+/*********** FONTS ************/
+
+/***** NORMAL *****/
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/static/Inter-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/***** SEMI-BOLD *****/
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/static/Inter-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+/***** BOLD *****/
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/static/Inter-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/*********** RESET START ***********/
 
 *,
 *::before,
@@ -58,4 +84,101 @@ h6 {
   overflow-wrap: break-word;
 }
 
-/****** RESET END ******/
+/*********** RESET END ***********/
+
+/*********** MOBILE STYLES ************/
+
+:root {
+  --green: hsl(75, 94%, 57%);
+  --white: hsl(0, 0%, 100%);
+  --grey: hsl(0, 0%, 20%);
+  --darkGrey: hsl(0, 0%, 12%);
+  --offBlack: hsl(0, 0%, 8%);
+}
+
+body {
+  font-family: Inter, sans-serif;
+  font-display: swap;
+  background-color: var(--offBlack);
+  padding: 1rem;
+}
+
+main {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: var(--darkGrey);
+  width: 25rem;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+}
+
+h1,
+p:not(.card__place),
+.card__link > a {
+  color: var(--white);
+}
+
+.card__img {
+  width: 75px;
+  border-radius: 50%;
+  margin-bottom: 1.25rem;
+}
+
+.card__name,
+.card__place {
+  font-weight: 700;
+}
+
+.card__name {
+  margin-bottom: 0.25rem;
+}
+
+.card__place {
+  margin-bottom: 1.25rem;
+  color: var(--green);
+}
+
+.card__title {
+  font-size: 14px;
+  margin-bottom: 1.5rem;
+}
+
+.card__links {
+  padding-left: 0;
+  width: 90%;
+}
+
+.card__link {
+  list-style-type: none;
+}
+
+.card__link > a {
+  display: block;
+  padding: 0.85rem;
+  text-align: center;
+  background-color: var(--grey);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.card__link:not(:last-child) {
+  margin-bottom: 0.85rem;
+}
+
+a:hover,
+a:active {
+  background-color: var(--green);
+  color: var(--offBlack);
+  cursor: pointer;
+}
